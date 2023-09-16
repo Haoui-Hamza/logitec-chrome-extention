@@ -1,16 +1,28 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "My API Caller Extension",
     "version": "1.0",
     "description": "An extension that makes API calls in the background",
-    
     "content_scripts": [
         {
-          "matches": ["<all_urls>"],
-          "js": ["content.js"]
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
         }
     ],
-    
-    
-    "permissions": ["activeTab", "storage"]
-  }
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action":{
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "notifications"
+    ]
+}
