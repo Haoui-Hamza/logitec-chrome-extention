@@ -7,13 +7,24 @@
       "default_icon": "icon.png",
       "default_popup": "popup.html"
     },
+
     "content_scripts": [
         {
-          "matches": ["<all_urls>"],
-          "js": ["content.js"]
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
         }
     ],
-    
-    
-    "permissions": ["activeTab", "storage"]
-  }
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "notifications"
+    ]
+}

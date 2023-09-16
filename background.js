@@ -3,23 +3,20 @@
 chrome.runtime.onInstalled.addListener(() => {
     // This event listener will trigger when the extension is installed or updated.
     console.log("Extension installed or updated.");
-  });
-  
-  chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+});
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "makeApiCall") {
-      // Make an API call here using the fetch API or other methods.
-      fetch("https://api.coronavirus.data.gov.uk/v1/data")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("API Response:", data);
-          sendResponse({ success: true, data });
-        })
-        .catch((error) => {
-          console.error("API Error:", error);
-          sendResponse({ success: false, error });
-        });
-  
-      return true; // Indicates that we will send a response asynchronously
+        // Make an API call here using the fetch API or other methods.
+        console.log("hello2")
+
+        return true; // Indicates that we will send a response asynchronously
+    }
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.selectedText) {
+      // Handle the selected text, e.g., display it in a popup
+      chrome.action.setBadgeText({ text: request.selectedText, tabId: sender.tab.id });
     }
   });
-  
