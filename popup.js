@@ -17,15 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("content loaded")
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         const tab = tabs[0];
+
+
         chrome.action.getBadgeText({ tabId: tab.id }, function (result) {
             const selectedText = result || 'No text selected';
             document.getElementById('selectedText').textContent = selectedText;
+        });
 
-            let gptResponse 
-            console.log(selectedText)
-            
-
-            document.getElementById('gptText').textContent = selectedText;
+        chrome.action.getBadgeText({ tabId: tab.id }, function (result) {
+            const gptResponse = result || 'No response';
+            console.log(gptResponse)
+            document.getElementById('result').textContent = selectedText;
 
         });
     });

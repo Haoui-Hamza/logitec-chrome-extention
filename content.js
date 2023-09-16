@@ -17,7 +17,7 @@ function makeAPICall(subject) {
                       },
                       {
                         "role": "user",
-                        "content": `i need to know some basic essenssial summerized information about ${subject} `
+                        "content": `i need to know some basic essenssial summerized information about ${subject} maximum 120 word`
                       }
                     ]
                 })
@@ -27,6 +27,8 @@ function makeAPICall(subject) {
             console.log(data);
             if (data) {
                 console.log("data is here")
+                console.log(data.choices[0].message.content);
+                chrome.runtime.sendMessage({ response: data.choices[0].message.content });
             }
         })
         .catch(error => {

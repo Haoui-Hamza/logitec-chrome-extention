@@ -15,8 +15,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    console.log(request)
     if (request.selectedText) {
       // Handle the selected text, e.g., display it in a popup
       chrome.action.setBadgeText({ text: request.selectedText, tabId: sender.tab.id });
+    }
+    if(request.response){
+        chrome.action.setBadgeText({ text: request.response, tabId: sender.tab.id });
     }
   });
