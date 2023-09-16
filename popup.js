@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         chrome.action.getBadgeText({ tabId: tab.id }, function (result) {
-            const gptResponse = result || 'No response';
+            const gptResponse = result || 'No text selected';
             console.log(gptResponse)
             document.getElementById('result').textContent = selectedText;
 

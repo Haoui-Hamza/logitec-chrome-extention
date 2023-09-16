@@ -18,6 +18,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     console.log(request)
     if (request.selectedText) {
       // Handle the selected text, e.g., display it in a popup
+      console.log(request.selectedText)
       chrome.action.setBadgeText({ text: request.selectedText, tabId: sender.tab.id });
     }
     if(request.response){
