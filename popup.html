@@ -17,7 +17,27 @@
     <div id="resultWrapper">
       <!-- <img id="questionIcon" class="iconContent" src="./assets/cloud-answer-icon.png" alt="cosing buttong"/> -->
       <div id="result" class="resultContent" style="width: 100%; margin-left: 5px;">
-        You have no search results yet!
+        <!-- You have no search results yet! -->
+        You are correct. In valid HTML, an ID should be unique within a page. Each element with an ID should have a distinct identifier. Having multiple elements with the same ID is not recommended and can lead to unexpected behavior in your HTML and CSS.
+        If you have multiple elements that need the same styling, you should use class selectors rather than IDs. Classes can be applied to multiple elements on a page, allowing you to style them consistently. Here's an example:
+        <pre>
+          <code>
+  /* HTML */
+  &lt;div class="my-element"&gt;Element 1&lt;/div&gt;
+  &lt;div class="my-element"&gt;Element 2&lt;/div&gt;
+  &lt;div class="my-element"&gt;Element 3&lt;/div&gt;
+          </code>
+        </pre>
+        <pre>
+          <code>
+  /* CSS */
+  .my-element {
+    color: blue;
+    font-size: 16px;
+  }
+          </code>
+        </pre>
+        In this example, all elements with the class my-element will receive the specified styles. Using classes in this way is a more flexible and recommended approach when you have multiple elements with similar styling requirements.
       </div>
     </div>
     <script src="popup.js"></script>

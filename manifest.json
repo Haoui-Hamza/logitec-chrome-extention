@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "My API Caller Extension",
+    "name": "MX BLITZ",
     "version": "1.0",
     "description": "An extension that makes API calls in the background",
     "action":{
