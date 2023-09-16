@@ -3,11 +3,11 @@
     padding: 0;
 }
 body{
-    min-width : 300px;
-    background: #F5F5F5;
-    padding: 5px 10px 10px;
-    text-align: justify;
-
+    min-width : 500px;
+    background: rgb(2,0,36);
+    background: linear-gradient(166deg, rgba(2,0,36,1) 0%, rgba(1,156,197,1) 80%, rgba(0,212,255,1) 99%);
+    padding:10px
+    font-family: 'Montserrat', sans-serif;
 }
 #topBar{
 
@@ -20,7 +20,13 @@ body{
 }
 img{
     width: 25px;
+    maring:5px
     cursor: pointer;
+}
+
+#logitech_logo{
+    width: 75px;
+    object-fit:"contain"
 }
 
 #selectedTextWrapper{
@@ -38,11 +44,14 @@ img{
 }
 
 .selectedContent{
-    border: 2px none none;
-    border-radius: 2px;
-    background-color: #00CED1;
-    color: #383838	;
-    padding: 5px;
+    background-color: white;
+    min-height:150 ;
+    border-radius: 30px;
+    margin:5;
+    color: #2a2acc	;
+    padding: 15px;
+    font-weight: bold;
+    font-size:18
 }
 
 #resultWrapper{
@@ -52,9 +61,11 @@ img{
 .resultContent{
     border: 2px none none;
     border-radius: 2px;
-    background-color: #005969;
+    background-color: transparent;
     color: white;
     padding: 5px;
+    font-family: "Lucida Console";
+    font-weight: semi-bold;
 }
 
 pre{
